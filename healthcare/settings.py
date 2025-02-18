@@ -13,7 +13,7 @@ load_dotenv()
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"postgres://{os.getenv('DB_USER', 'postgres')}:{os.getenv('DB_PASSWORD', 'Demo12345')}@{os.getenv('DB_HOST', 'database-2.c18o0k6g8ej3.us-east-1.rds.amazonaws.com')}:{os.getenv('DB_PORT', '5432')}/{os.getenv('DB_NAME', 'test')}"
+        default=f"postgres://{os.getenv('DB_USER', 'postgres')}:{os.getenv('DB_PASSWORD', 'Demo12345')}@{os.getenv('DB_HOST', 'hospitaldb.cq1kcq80oqfm.us-east-1.rds.amazonaws.com')}:{os.getenv('DB_PORT', '5432')}/{os.getenv('DB_NAME', 'demo')}"
     )
 }
 
@@ -90,10 +90,10 @@ CACHES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'test'),
+        'NAME': os.getenv('DB_NAME', 'demo'),
         'USER': os.getenv('DB_USER', 'postgres'),
         'PASSWORD': os.getenv('DB_PASSWORD', 'Demo12345'),
-        'HOST': os.getenv('DB_HOST', 'database-2.c18o0k6g8ej3.us-east-1.rds.amazonaws.com'),
+        'HOST': os.getenv('DB_HOST', 'hospitaldb.cq1kcq80oqfm.us-east-1.rds.amazonaws.com'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
