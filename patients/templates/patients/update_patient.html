@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    
+    <h2 style="color: #007BFF; margin-bottom: 15px;">Update Patient</h2>
+
+    <form method="POST" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Update
+        </button>
+    </form>
+
+    <a href="{% url 'dashboard' %}" style="display: inline-block; margin-top: 15px; text-decoration: none; color: #007BFF; font-weight: bold;">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+{% endblock %}

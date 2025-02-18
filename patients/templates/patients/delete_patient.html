@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    
+    <h2 style="color: red; margin-bottom: 15px;">Delete Patient</h2>
+    
+    <p style="font-size: 16px; color: #333;">Are you sure you want to delete <strong>"{{ patient.name }}"</strong>?</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Yes, Delete</button>
+    </form>
+    
+    <br>
+    
+    <a href="{% url 'dashboard' %}" style="display: inline-block; background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 16px;">Cancel</a>
+    
+</div>
+{% endblock %}
